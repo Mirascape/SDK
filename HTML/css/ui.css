@@ -1,0 +1,178 @@
+html {
+	background: #121011 url(https://www.mirascape.com/img/wall_bokeh_sm.jpg) no-repeat scroll 50% 0px;
+}
+
+body {
+	display: block;
+}
+
+#loading {
+	position:absolute;
+	top:0;
+	left:0;
+	height: 100%;
+	width: 100%;
+	background: #121011;
+}
+
+#loading #preload {
+	position: absolute;
+	top: 40%;
+	width: inherit;
+}
+
+#loading #preload * {
+	margin: 7px;
+	display:block;
+	text-align: center;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 0.8em;
+}
+
+#container {
+	display: none;
+	
+	max-width: 480px;
+	
+	height: 100%;
+	width: 100%;
+	
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3px 3px 0 3px; /* t, r, b, l */
+}
+
+#header {
+	margin-bottom: 3px;
+}
+
+#header h1 {
+	font-size: 1.2em;
+}
+
+#header #thumbnail {
+	float: left;
+	height: 60px;
+	width: 60px;
+	margin: 0 5px 5px 0;
+}
+
+#header .module_inner {
+	min-height: 60px;
+/*	height: 60px;
+	overflow:hidden; */
+}
+
+.module_inner .icon {
+	margin:0 4px 0 0;
+}
+
+#templates, .detail, .detail .itemView {
+	display:none;
+}
+
+.lightbox {
+	background: none;
+	border: none;
+}
+
+.lightbox-overlay {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox .ui-dialog-titlebar {
+	display:none;
+
+}
+
+.lightbox img {
+	max-height:auto;
+	max-width: auto;
+}
+
+.middle {
+	margin-top: 24px;
+}
+
+.embiggen {
+	font-size: 1.2em;
+}
+
+.item {
+	height: 100%;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.item *{
+	opacity: 0.4;
+}
+
+.item:hover *{
+	opacity: 0.5;
+}
+
+.item.active *{
+	opacity: 1.0;
+}
+
+/* stuff we might be able to add to global styles. */
+.large_icon {
+	cursor: pointer;
+}
+
+.icon.left {
+	margin-right: 4px;
+}
+
+.icon.right {
+	margin-left: 4px;
+}
+
+.campaignStatus.active{
+	color:lime;
+}
+
+.campaignStatus.inactive{
+	color:red;
+}
+
+.detail-breadcrumb{
+	display: block;
+	width: 100%;
+	overflow: auto;
+	width: 100%;
+}
+
+.detail-breadcrumb a{
+	cursor: pointer;
+}
+
+.item p{
+	margin:0;
+}
+
+.view-button{
+	width:44px;
+	height:62px;
+	background-image:url('../img/view-button.png');
+}
+
+.active .view-button{
+	background-position:44px 0;
+}
+
+.large_icon{
+	max-width:169px;
+	max-height:169px;
+}
+
+#media a{
+	color:white;
+}
+
+#showtimes .ui-accordion-content{
+	margin-left:10px;
+}
+

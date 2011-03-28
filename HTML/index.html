@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width; height=device-height; maximum-scale=1.0; user-scalable=no;">
+
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid Sans:regular,bold" type="text/css" />
+	<link rel="stylesheet" href="css/basic.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/jqueryui/mirascape.css" type="text/css"  />
+	<link rel="stylesheet" href="css/ui.css" type="text/css" media="screen" />
+
+	<link rel="apple-touch-icon" href="apple-touch-icon.png" class="campaignThumbnail" />
+
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="js/jquery-ui-1.8.6.custom.min.js" type="text/javascript"></script>
+	<script src="js/jquery.tmpl.min.js" type="text/javascript"></script>
+	<script src="js/sdk.js" type="text/javascript"></script>
+
+	<title>Mirascape&trade; SDK</title>
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-17582115-6']);
+	  _gaq.push(['_setDomainName', 'none']);
+	  _gaq.push(['_setAllowLinker', true]);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+	
+</head>
+<body onload="SDK.init();">
+	<div id="loading">
+		<div id="preload">
+			<img src="https://www.mirascape.com/img/ajax-loader.gif" alt="Loading..." />
+			<noscript>This experience requires Javascript.</noscript>
+		</div>
+	</div>
+
+	<div id="container">
+
+		<div id="header" class="sticky row">
+			<div class="module">
+				<div class="silver_lining pad">
+					<!--
+						By default, this content is autopopulated when you specify a campaignID.
+						If you change these values, they will only be displayed when the SDK is unable to retrieve your campaign.
+					-->
+					<!-- <div id="thumbnail">
+						<a href="#" onclick="SDK.reload();"><img src="" class="campaignThumbnail icon silver_lining" /></a>
+					</div> -->
+
+					<!-- <button id="share" class="mirascape-button right">Share</button> -->
+					<div id="shareControls">
+						<a href="http://twitter.com/share" class="twitter-share-button" data-text="I'm embarking on a mission. Come join me! @ravemovies" data-count="vertical" data-via="Mirascape" data-related="ravemovies">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+					</div>
+					
+					<img src="http://c20300.r0.cf1.rackcdn.com/9a0e34c83b92271398a1c0f8d775a30dc78b66044d5ed1adf34e92.65711763" />
+					<h1>Theatre Experience</h1>
+
+					<!-- <h1 class="campaignName">Unable to load campaign.</h1> -->
+					<!--<p class="campaignSynopsis">Please make sure to set <code>SDK.campaignID</code> to a legitimate integer value in <code>index.html</code>.</p>-->
+					<!-- <p>Status: <span class="campaignStatus inactive">Inactive</span></p> -->
+					<strong>[ <span class="myDisplayName"><a href="#" onclick="SDK.displayLogin();">Login</a> | <a href="#" onclick="SDK.displayRegistration();">Register</a></span> ]</strong>
+				
+					<br class="clear" />
+				</div>
+			</div>
+		</div>
+
+		<div id="content" class="row tabContainer">
+			<table id="tabs">
+				<tr>
+					<td class="link"><a href="#info">Info</a></td>
+					<td class="spacer"></td>
+					<!-- <td class="link"><a href="#stats">Stats</a></td>
+					<td class="spacer"></td> -->
+					<td class="selected link"><a href="#collections">Collections</a></td>
+					<td class="spacer"></td>
+					<!-- <td class="link"><a href="#groups">Groups</a></td>
+					<td class="spacer"></td>
+					<td class="link"><a href="#missions">Missions</a></td>
+					<td class="spacer"></td> -->
+					<td class="link"><a href="#media">Trailers</a></td>
+					<td class="spacer"></td>
+					<td class="link"><a href="#showtimes">Showtimes</a></td>
+					<td class="remainder">&nbsp;</td>
+				</tr>
+			</table>
+
+
+			<div id="info" class="tab_box">
+				<div class="tab_box_inner">
+					<div class="module_inner">
+						<h3>Basic Information</h3>
+						<p class="campaignDescription">Long description.</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="stats" class="tab_box">
+				<div class="tab_box_inner">
+					<div class="module_inner">
+						<div class="statList">
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="collections" class="tab_box">
+				<div class="tab_box_inner">
+					<!--<div class="module_inner">-->
+						<div id="itemDetail">
+						</div>
+						<div class="accordion collectionList">
+						</div>
+<!--					</div>-->
+				</div>
+			</div>
+
+			<div id="groups" class="tab_box">
+				<div class="tab_box_inner">
+					<div class="module_inner">
+						<div class="groupList">
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="missions" class="tab_box">
+				<div class="tab_box_inner">
+					<div class="accordion missionList">
+					</div>
+				</div>
+			</div>
+
+			<div id="media" class="tab_box">
+				<div class="tab_box_inner">
+					<div class="mediaList">
+					</div>
+				</div>
+			</div>
+
+			<div id="showtimes" class="tab_box">
+				<div class="tab_box_inner">
+					<div class="accordion">
+						<h3 class="module_inner"><img src="rave/dummy-theater.png" class="left icon">Destin Commons 14 + IMAX&reg;, Destin, FL</h3>
+						<div>
+							<div class="module_inner">
+								<img src="http://c0020300.cdn1.cloudfiles.rackspacecloud.com/5c1471bf6b89f7a8a2e6a799c5e89f14b8b65ab64d542fa0f36d29.05399519" class="left icon silver_lining">
+								<h4>Sucker Punch: The IMAX Experience</h4>
+								<p>Showtimes coming soon.</p>
+							</div>
+						</div>
+						<h3 class="module_inner"><img src="rave/dummy-theater.png" class="left icon">Mall of Louisiana 15 + IMAX&reg;, Baton Rouge, LA</h3>
+						<div>
+							<div class="module_inner">
+								<img src="http://c0020300.cdn1.cloudfiles.rackspacecloud.com/5c1471bf6b89f7a8a2e6a799c5e89f14b8b65ab64d542fa0f36d29.05399519" class="left icon silver_lining">
+								<h4>Sucker Punch: The IMAX Experience</h4>
+								<p>Showtimes coming soon.</p>
+							</div>
+						</div>
+						<h3 class="module_inner"><img src="rave/dummy-theater.png" class="left icon">Jefferson Pointe 18 + IMAX&reg;, Ft. Wayne, IN</h3>
+						<div>
+							<div class="module_inner">
+								<img src="http://c0020300.cdn1.cloudfiles.rackspacecloud.com/5c1471bf6b89f7a8a2e6a799c5e89f14b8b65ab64d542fa0f36d29.05399519" class="left icon silver_lining">
+								<h4>Sucker Punch: The IMAX Experience</h4>
+								<p>Showtimes coming soon.</p>
+							</div>
+						</div>
+						<h3 class="module_inner"><img src="rave/dummy-theater.png" class="left icon">Bayou 15 + IMAX&reg;, Pensacola, FL</h3>
+						<div>
+							<div class="module_inner">
+								<img src="http://c0020300.cdn1.cloudfiles.rackspacecloud.com/5c1471bf6b89f7a8a2e6a799c5e89f14b8b65ab64d542fa0f36d29.05399519" class="left icon silver_lining">
+								<h4>Sucker Punch: The IMAX Experience</h4>
+								<p>Showtimes coming soon.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer" class="sticky row">
+		
+			<a href="http://www.twitter.com/RaveIMAXgame" style="display:inline-block; width:50%;"><img src="img/followus.png" style="width:100%;" alt="Follow RaveIMAXgame on Twitter"/>
+			<a href="http://www.canyousetthemfree.com/" style="display:inline-block; width:50%;"><img src="img/clues_instructions.png" style="width:100%;" /></a>
+
+
+		
+			<!--  <div class="module">
+				<div class="silver_lining pad">
+				
+
+					<table>
+						<tr>
+							<td class="pad" style="vertical-align:middle;"></a></td>
+							<td class="pad"></td>
+						</tr>
+					</table> 
+				</div>
+			</div> -->
+		</div>
+	</div>
+
+	<div id="templates">
+
+		<div id="login">
+			<form id="loginForm">
+				<label for="email">Email: </label><input id="emailField" name="email" placeholder="your@email.com" /><br />
+				<label for="password">Password: </label><input id="passwordField" name="password" type="password" placeholder="Password" />
+			</form>
+		</div>
+		<div id="register">
+			<form id="registrationForm">
+				<label for="email">Email: </label><input id="emailField" name="email" placeholder="your@email.com" /><br class="clear">
+				<label for="firstName">First Name: </label><input id="firstNameField" name="firstName" placeholder="First Name" /><br class="clear">
+				<label for="lastName">Last Name: </label><input id="lastNameField" name="lastName" placeholder="Last Name" /><br class="clear">
+				<label for="password">Password: </label><input id="passwordField" name="password" type="password" placeholder="Password" /><br class="clear">
+				<label for="passwordConfirm">Password Confirm: </label><input id="passwordConfirmField" name="passwordConfirm" type="password" placeholder="Password Confirm" /><br class="clear">
+				<!-- <label for="gender">Gender: </label><select id="genderField" name="gender"><option value="male">Male</option><option value="female">Female</option></select><br class="clear">
+				<label for="birthdate">Birthday: </label><input id="birthdateField" name="birthdate" placeholder="YYYY-MM-DD" /><br class="clear">
+				<label for="avatar">Upload Photo (Optional): </label><input id="avatarField" name="avatar" type="file" /> -->
+			</form>
+		</div>
+
+		<script id="shareDialogTemplate" type="text/html">
+			<div>
+				<textarea id="shareText" style="width:100%; height: 60px; font-size: 1.2em;" class="embiggen">Come join me on Mirascape! I'm using ${title}: ${shortURL}</textarea>
+				
+				<div><input type="checkbox" name="twitter" style="height: 20px; width: 20px;" checked/> <label for="twitter" class="embiggen"><img src="http://twitter.com/favicon.ico" /> Twitter</label></div><br class="clear">
+				<div><input type="checkbox" name="facebook" style="height: 20px; width: 20px;" checked/> <label for="facebook" class="embiggen"><img src="http://facebook.com/favicon.ico" /> Facebook</label></div><br class="clear">
+			</div>
+		</script>
+
+		<script id="statListTemplate" type="text/html">
+			<div class="googleMap" style="width:100%; height:180px; background: url('http://maps.google.com/maps/api/staticmap?center=Raleigh,NC&size=600x180&zoom=14&sensor=true') no-repeat scroll 50% 0px">
+			</div>
+			<div class="accordion">
+				<h3><a href="#"><span>0</span> Missions Completed</a></h3>
+				<div>Missions completed text.</div>
+				<h3><a href="#"><span>0</span>Collections Completed</a></h3>
+				<div>Collections completed text.</div>
+				<h3><a href="#"><span>0</span>Achievements Completed</a></h3>
+				<div>Achievements completed text.</div>
+			</div>
+		</script>
+
+		<script id="missionListTemplate" type="text/html">
+			{{each(i, mission) missions}}
+			<h3 class="module_inner"><a href="#">${title}<p>${completedTasks} of ${tasks.count} tasks completed</p></a></h3>
+			<div>{{tmpl(mission) "#taskListTemplate"}}</div>
+			{{/each}}
+		</script>
+
+		<script id="taskListTemplate" type="text/html">
+			{{each(t, task) tasks}}
+			<div class="module_inner">
+				<h4>${task.name}</h4>
+				<p>${task.description}</h4>
+			</div>
+			{{/each}}
+		</script>
+
+		<script id="collectionListTemplate" type="text/html">
+			{{each(i, collection) itemSets}}
+			<h3 class="module_inner">
+				<a href="#" class="pad">
+					<img src="${collection.thumbnailURL}" class="left icon silver_lining" />
+					<div>
+						${title}
+						<p>Collected ${collectedItems} of ${totalItems}</p>
+					</div>
+					<br class="clear" />
+				</a>
+			</h3>
+			<div>{{tmpl(collection) "#itemListTemplate"}}</div>
+			{{/each}}
+		</script>
+
+		<script id="itemListTemplate" type="text/html">
+			{{each(t, item) items}}
+			<div>
+				<img src="img/item_{{if item.collected}}found{{else}}notfound{{/if}}.png" class="left middle" />
+				<div class="module_inner item {{if item.collected}}active{{/if}}" title="${item.name}">
+					<img src="${item.thumbnailURL}" class="left icon silver_lining" />
+					<div class="view-button right shadow"></div>
+					<div>
+						<h4>${item.name}</h4>
+						<p>${item.description}</p>
+					</div>
+
+					<!--hidden-->
+					<div class="detail" style="padding:0 4px">
+
+						<div class="detail-breadcrumb">
+							<div class="module_inner">
+								<span class="left" style="text-transform:uppercase;"><a>${title}</a> > Item Detail</span> <span class="right">${collectedItems} / ${totalItems}</span>
+							</div>
+						</div>
+
+						<br>
+						<div class="center">
+							<img src="${thumbnailURL}" class="silver_lining shadow large_icon"/>
+						</div>
+						<br>
+						<h3 class="center">${item.name}</h3>
+						<p class="module_inner">${item.description}</p>
+
+						<div class="itemView">
+							{{tmpl(item) "#itemViewTemplate"}}
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</script>
+
+		<!-- NOTE:  this is very similar to itemListTemplate.  We may want to abstract these and merge them together. -->
+		<script id="groupListTemplate" type="text/html">
+			{{each(t, group) groups}}
+			<div class="module_inner">
+
+				<img src="${group.thumbnailURL}" class="left icon silver_lining" />
+				<div>
+					<h4>${group.name}</h4>
+					<p>${group.description}</p>
+				</div>
+
+				<br class="clear" />
+			</div>
+			{{/each}}
+		</script>
+
+		<!-- NOTE:  this is very similar to itemListTemplate.  We may want to abstract these and merge them together. -->
+		<script id="assetListTemplate" type="text/html">
+			{{each(t, asset) assets}}
+			<div class="module_inner">
+				<a href="${asset.url}">
+					<img src="${asset.thumbnailURL}" class="icon left silver_lining" />
+					<div>
+						<h4>${asset.title}</h4>
+						<p>${asset.description}</p>
+					</div>
+				</a>
+			</div>
+			{{/each}}
+		</script>
+
+		<script id="itemViewTemplate" type="text/html">
+			<img src="${mediumPicURL}" />
+			<p style="text-align:center;">Tap again to hide this image.</p>
+		</script>
+
+		<div id="debug"></div>
+
+
+	</div>
+
+	<script type="text/javascript">
+		// Settings
+		SDK.campaignID	= 100250; // set this to a campaign ID, if you want.
+
+	</script>
+</body>
+</html>
+
